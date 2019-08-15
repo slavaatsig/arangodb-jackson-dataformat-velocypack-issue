@@ -6,6 +6,12 @@ version = "1.0-SNAPSHOT"
 plugins {
     kotlin("jvm") version "1.3.41"
     application
+    id("org.jetbrains.kotlin.plugin.noarg") version "1.3.41"
+}
+
+noArg {
+    annotation("com.example.issue.NoArg")
+    invokeInitializers = true
 }
 
 application {
