@@ -33,7 +33,7 @@ dependencies {
     implementation("com.arangodb:arangodb-java-driver-async:5.0.7")
 
     // ArangoDB Velocypack plugin for Jackson
-    implementation("com.arangodb:jackson-dataformat-velocypack:0.1.1")
+    implementation("com.arangodb:jackson-dataformat-velocypack:0.1.3")
 
     // Jackson Serialization
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7")
