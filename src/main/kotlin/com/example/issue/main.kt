@@ -7,6 +7,7 @@ import com.fasterxml.jackson.module.kotlin.KotlinModule
 import kotlinx.coroutines.future.await
 import kotlinx.coroutines.runBlocking
 
+@NoArg
 data class Record(
         val _key: String,
         val _rev: String,
@@ -23,7 +24,7 @@ fun main() {
                 .db("playground").collection("test")
 
         val failing: ArangoCollectionAsync = ArangoDBAsync.Builder().user("root").password("root")
-                .setSerializer(VelocyJack().apply { configure { it.registerModule(KotlinModule()) } })
+                .serializer(VelocyJack().apply { configure { it.registerModule(KotlinModule()) } })
                 .build()
                 .db("playground").collection("test")
 

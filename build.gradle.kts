@@ -6,6 +6,12 @@ version = "1.0-SNAPSHOT"
 plugins {
     kotlin("jvm") version "1.3.41"
     application
+    id("org.jetbrains.kotlin.plugin.noarg") version "1.3.41"
+}
+
+noArg {
+    annotation("com.example.issue.NoArg")
+    invokeInitializers = true
 }
 
 application {
@@ -27,7 +33,7 @@ dependencies {
     implementation("com.arangodb:arangodb-java-driver-async:5.0.7")
 
     // ArangoDB Velocypack plugin for Jackson
-    implementation("com.arangodb:jackson-dataformat-velocypack:0.1.1")
+    implementation("com.arangodb:jackson-dataformat-velocypack:0.1.3")
 
     // Jackson Serialization
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7")
